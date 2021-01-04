@@ -6,7 +6,10 @@ const userRouter = require("./api/users/user.router");
 app.use(express.json());
 
 app.get("/api", (req,res)=>{
-  res.json({message: "rkofkood"})
+  res.json({message: "Welcome"})
+});
+app.get("/", (req,res)=>{
+  res.json({message: "Welcome"})
 });
 app.use("/api", userRouter);
 const port = process.env.PORT || 4000;
