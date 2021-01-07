@@ -5,6 +5,7 @@ const { sign } = require("jsonwebtoken");
 module.exports = {
   login: (req, res) => {
     const body = req.body;
+    console.log(body)
     getUser(body.username, (err, results) => {
       if (err) {
         console.log(err);
@@ -17,9 +18,7 @@ module.exports = {
       }
       if (body.password.toString()===results.password.toString()) {
         results.password = undefined;
-        const jsontoken = sign({ result: results }, "qwe1234", {
-          expiresIn: "1h"
-        });
+        const jsontoken = sign({ result: results }, "qwe1234");
         return res.json({
           success: 1,
           message: "login successfully",
