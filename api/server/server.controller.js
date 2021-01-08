@@ -1,5 +1,4 @@
-const {getUser, add} = require("./user.service");
-const { hashSync, genSaltSync, compareSync } = require("bcrypt");
+const {getUser, add} = require("./server.service");
 const { sign } = require("jsonwebtoken");
 
 module.exports = {
